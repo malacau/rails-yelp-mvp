@@ -10,6 +10,25 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark site-header sticky-top py-1">
+      <%= link_to 'Yelp in rails', restaurants_path, class:"navbar-brand"%>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to 'Liste des restaurants', restaurants_path, class:"nav-link"%>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <%= link_to "Add a Restaurant", new_restaurant_path, class: "btn btn-primary" %>
+        </form>
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
